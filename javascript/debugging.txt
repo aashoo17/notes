@@ -1,0 +1,39 @@
+Breakpoints
+---------->
+normal and conditional bp
+remove bp
+disable bp
+
+execute code from one bp to another bp
+step over
+step into
+step out
+
+watch
+---->
+watch variables 
+add to watch
+watch expression made from variables
+
+scope variables watch like this,closure,..
+
+console
+------>
+console.log()
+console.clear()
+console.table(data,['name','age']) for part of json data
+
+drawer for console while debugging by escape button or >= icon
+
+shift + enter multi line command in chrome
+snippets = sources => snippets
+
+style css change and drag html lines in chrome
+
+edit js in chrome
+
+call stack
+see function execution stack
+
+
+
