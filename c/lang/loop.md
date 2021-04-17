@@ -1,7 +1,7 @@
 ```c
 int x = 10;
 
-while(x==10){
+while(x == 10){
     //do something
     x++;
 }

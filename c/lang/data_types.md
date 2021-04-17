@@ -3,7 +3,7 @@
 ## How people find ways to represent char, int, float/double 
 
 ### int
-[Decimal and binary conversion of it](https://owlcation.com/stem/How-to-Convert-Decimal-to-Binary-and-Binary-to-Decimal)  
+[Decimal and binary conversion of int](https://owlcation.com/stem/How-to-Convert-Decimal-to-Binary-and-Binary-to-Decimal)  
 int representation was very easy any no can be represented in binary form as described above.  
 more bytes mean bigger no can be represented say for  
 16 bits = 2^16 possible representation  
@@ -16,7 +16,7 @@ then came negative no so the easy way to do it would have been keep 1 bit for si
 but 0 is problem here we get two 0 as +0 and -0 then  
 0000 0000 = +0
 1000 0000 = -0
-
+[2's complement system](https://en.wikipedia.org/wiki/Two%27s_complement)  
 show came 2's complement, in this we reverse the bits and 1 to no to get the negative no of it  
 0000 0001 = 1  
 1111 1110 (bits reversed)
