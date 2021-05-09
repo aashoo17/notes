@@ -1,1 +1,0 @@
-[Learn bitwise operator and when it is used](https://users.cs.cf.ac.uk/Dave.Marshall/PERL/node36.html)

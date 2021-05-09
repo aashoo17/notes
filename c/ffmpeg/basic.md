@@ -1,1 +1,0 @@
-[ffmpeg decding](https://sodocumentation.net/ffmpeg/topic/10090/decoding)

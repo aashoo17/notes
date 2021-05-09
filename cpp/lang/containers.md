@@ -1,5 +1,0 @@
-# Sequential container
-
-
-
-# Associative container
