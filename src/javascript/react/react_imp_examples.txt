@@ -1,0 +1,18 @@
+using a function to return a value and use the value to make changes easier
+
+getUrl(){return 'https://google.co.in'}		//function inside class
+<a href={this.geturl()}>Link is {this.getUrl()}</a>
+
+calling/running a function to do something written inside class without using any event like onClick, onChange to call
+
+callMe = () => {}		//inside class
+<button onClick={this.callMe}></button>		//using event here
+constructor(){
+	this.callMe()		//to call function
+}
+
+use setInterval to inside a function to execute some function after a period of time and change state there to re render
+
+callMe = () => {
+	setInterval(() => {},1000)
+}

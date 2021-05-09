@@ -1,0 +1,6 @@
+|| and && operator
+----------------->
+A && B returns the value A if A can be coerced into false; otherwise, it returns B.
+A || B returns the value A if A can be coerced into true; otherwise, it returns B.
+
+

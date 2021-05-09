@@ -1,0 +1,37 @@
+//mongoose
+
+npm i -S mongoose     //install from NPM registry
+
+//connection
+
+mongoose.connect('mongodb://localhost/db');
+
+
+//Schema - nothing but specifying the variable to be stored and their type
+
+var {Schema} = require('mongoose/mongoose')
+var schema = new Schema({                 //creating new schema
+	name: {type:String,required:true},
+	age: {type:Number,required:true}
+})
+
+var schema = new Schema({                 //creating new schema with collection name
+	name: {type:String,required:true},
+	age: {type:Number,required:true}
+},'userCollection')
+
+//model or document creation
+
+var model = mongoose.model('user',schema)  //if schema does not have collection name by default 
+											//plural form of model name will be used for collection name as models here
+
+//All the crud operation to be done on this model in mongoose
+
+model.create()
+var m = new model()				//alternate form to create
+m.save(function(err,){})         //TODO:complete second argument
+
+model.find()
+model.findOne()
+model.findById()
+model.find().remove()      //remove documentd

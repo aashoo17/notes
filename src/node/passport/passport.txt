@@ -1,0 +1,95 @@
+//passport
+
+authenticates user via different methods(called as strategies) and recognises the user after authentiction
+via session 
+
+//middleware
+
+In a Connect or Express-based application, passport.initialize() middleware is required to initialize Passport.
+If your application uses persistent login sessions, passport.session() middleware must also be used.
+
+//other middlewares
+
+//body-parser    for json and url parsing
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(session({secret:'secret',resave:false,saveUninitialized:false}))    //express-session middleware
+app.use(flash())         //connect-flash middleware
+app.use(cookieParser())     //cookieparser middleware
+
+//passport-local
+
+uses username and password to login and strategies have to be defined for login
+var passport = require('passport/passport')
+  , LocalStrategy = require('passport-local').Strategy;
+
+passport.use('local',new LocalStrategy(						//local is name of the strategy
+  function(username, password, done) {						//function defines how to authenticate by custom code
+    User.findOne({ username: username }, function (err, user) {     //find in database
+      if (err) { return done(err); }						//if any server side error, database not found etc
+      if (!user) {											//if user is not founr
+        return done(null, false, { message: 'Incorrect username.' });
+      }
+      if (!user.validPassword(password)) {
+        return done(null, false, { message: 'Incorrect password.' });
+      }
+      return done(null, user);
+    });
+  }
+));
+
+//Sessions
+
+In a typical web application, the credentials used to authenticate a user will only be transmitted
+ during the login request. If authentication succeeds, a session will be established and maintained
+ via a cookie set in the user's browser.
+
+Each subsequent request will not contain credentials, but rather the unique cookie that identifies 
+the session. In order to support login sessions, Passport will serialize and deserialize user instances
+ to and from the session.
+
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
+});
+
+passport.deserializeUser(function(id, done) {
+  User.findById(id, function(err, user) {
+    done(err, user);
+  });
+});
+
+
+//authentication request in a route access
+
+app.post('/login', passport.authenticate('local', { successRedirect: '/',
+                                                    failureRedirect: '/login' }));
+app.post('/login',
+  passport.authenticate('local'),				
+  function(req, res) {							//call your own piece of middleware if authentication successful
+    // If this function gets called, authentication was successful.
+    // `req.user` contains the authenticated user.
+    res.redirect('/users/' + req.user.username);
+  });
+  
+  //flash messages using middleware connect-flash
+  
+  app.post('/login',
+  passport.authenticate('local', { successRedirect: '/',
+                                   failureRedirect: '/login',
+                                   failureFlash: true })
+);
+
+//setting flash message specifically
+
+passport.authenticate('local', { failureFlash: 'Invalid username or password.' });
+passport.authenticate('local', { successFlash: 'Welcome!' });
+
+//Disable Sessions
+
+if authentication is required with each request
+app.get('/api/users/me',
+  passport.authenticate('basic', { session: false }),
+  function(req, res) {
+    res.json({ id: req.user.id, username: req.user.username });
+  });

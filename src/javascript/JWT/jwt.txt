@@ -1,0 +1,81 @@
+JsonWebToken
+
+Nothing but a simple json object
+This object will be send to client generally after their authentication by username/password, google,facebook
+then this object will be sent to server during api calls since this object is send by server initially it will 
+know if it is correct or not by decoding it
+
+jsonwebtoken is node module for implementing JWT in node.js servers
+
+npm i -S jsonwebtoken		//install
+using postman software to make api calls for interactive results
+
+how JWT works
+
+jwt consists of three parts 
+1. header
+2. payload
+3. signature
+
+header will have information about type of algorithm for encoding data, specifying object is a JWT etc
+e.g.
+{
+    "typ": "JWT",
+    "alg": "HS256"
+} 
+
+payload could be any object to be send generally some unique key pair values are sent about the user
+var payload = {
+	id: 1,
+	name: 'Ashutosh Singh',
+	age: 25
+}
+
+signature
+//TODO: what is base64url encoding
+encode header and payload with base64url and attach with . then hash it with mentioned algorithm with secret
+as per your wish
+
+data = base64urlEncode( header ) + “.” + base64urlEncode( payload )
+signature = Hash( data, secret );
+
+// header
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9
+// payload
+eyJ1c2VySWQiOiJiMDhmODZhZi0zNWRhLTQ4ZjItOGZhYi1jZWYzOTA0NjYwYmQifQ
+// signature
+-xN_h82PHVTCMA9vdoHrcZxH-x5mb11y1537t3rGzcM
+
+put all of them together with dot JWT is ready
+// JWT Token
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiJiMDhmODZhZi0zNWRhLTQ4ZjItOGZhYi1jZWYzOTA0NjYwYmQifQ.-xN_h82PHVTCMA9vdoHrcZxH-x5mb11y1537t3rGzcM
+
+note: so server or anyone can easily know the header and payload by decoding it with base64url
+but can't decode the signature without correct secret key
+
+store this JWT in local storage to send with api calls 
+server will try to use header with payload to get a signature by using its known secret key 
+if signature matches auth success else you can forbid the route
+
+
+
+
+Useful resources
+
+JWT working explained
+https://medium.com/vandium-software/5-easy-steps-to-understanding-json-web-tokens-jwt-1164c0adfcec
+
+JWT traversy media video
+https://www.youtube.com/watch?v=7nafaH9SddU
+
+interactive result of signature matching with jwt.io website
+https://jwt.io/
+
+base64url encoding live example
+http://www.simplycalc.com/base64url-encode.php
+
+
+
+
+
+
