@@ -2,7 +2,7 @@
 
 [how internet works](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work)  
 
-e.g. 1 - how cell phone talks to networks  
+e.g. 1 - how cell phone talks to networks/cell tower    
 server(computer) --> optical fiber line --> connected to cell tower --> tower throws electromagnetic waves --> captured by cell phone antennas  
 
 e.g.2 - working through modem  
@@ -17,6 +17,7 @@ server(computer) --> optical fiber line --> connected to routers --> multiple (o
 - optical fibre  
 [how optical fibre transmit 0 and 1 ] (<https://networkengineering.stackexchange.com/questions/22676/is-fiber-optic-digital-or-analog-optical-signal-is-digital-or-analog>)
 - by two antennas (using electromagnetic waves) having transmitter and receiver like in satellites, mobile devices  
+TODO: how electromagnetic waves transfer data  
 
 ## order of data movement in computer from physical layer to application level and vice versa
 
@@ -36,6 +37,8 @@ tcp adds the a header and provides logic for doing following things
 - acknowledgement for packet sent that it was received  
 - window size which tells the current size of data as in tcp data size can vary unlike in udp where it is fixed  
 - tcp checksum for checking data integrity  
+
+[tcp - rfc 793](https://datatracker.ietf.org/doc/html/rfc793)  
 
 **UDP**  
 
@@ -75,6 +78,7 @@ all numbers represent one of the router
 1 -> 5 -> 7 -> 9  
 1 -> 3 -> 8 -> 9
 2 -> 3 -> 6 -> 10  
+
 so routing protocol decides what path will be taken for data transfer  
 
 [Understanding Routing](https://www.youtube.com/watch?v=gQtgtKtvRdo)  
@@ -83,6 +87,8 @@ so routing protocol decides what path will be taken for data transfer
 
 two networks are connected via some kind of device called bridgers  
 
+- repeater
+- bridge/switches
 - routers
 
 TODO: get other bridging device names
@@ -108,7 +114,7 @@ kernel directly we will need the api kernel provides or we can talk to libc's ap
 
 as per my understanding rust uses libc api and golang talks directly to kernel  
 
-## user space c api for networking
+## user space c api from libc for networking
 
 **TCP**  
 
@@ -162,3 +168,8 @@ bind() - bind here also in client side must be implicit
 **Books**  
 
 1. Understanding Linux Network Internals by O'Reilly media  
+here we can have general idea of all topics and important linux data structures in their implementation  
+2. TCP-IP Illustrated Vol.1,2 and 3  
+this book gives detailed overview of tcp and ip working  
+3. Discrete Mathematics and Its Applications - Kenneth Rosen (2012)  
+this book can be used to understand graphs and spanning trees - so routers over network form a graph this will help in visualization and algorithms on graphs. mostly routing will be understandable easily then  
