@@ -29,5 +29,5 @@
     - [memory alignment](c/memory_alignment.md)
     - [git](c/git/git.md)
     - [linked list](c/linked_list.md)
-    - [Linux Networking](c/linux/networking/basics.md)
-        - [IP](c/linux/networking/ip.md)
+    - [Linux Networking](linux/networking/basics.md)
+        - [IP](linux/networking/ip.md)

@@ -1,6 +1,7 @@
 # Internet
 
 [how internet works](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work)  
+[networking basics](https://www.youtube.com/watch?v=n2D1o-aM-2s)
 
 e.g. 1 - how cell phone talks to networks/cell tower    
 server(computer) --> optical fiber line --> connected to cell tower --> tower throws electromagnetic waves --> captured by cell phone antennas  
@@ -14,10 +15,10 @@ server(computer) --> optical fiber line --> connected to routers --> multiple (o
 ## ways which data (streams of 0 and 1 can be transferred) physically
 
 - over electrical line using high voltage for 1 and low voltage for 0
-- optical fibre  
+- optical fibre => using high light intensity for 1 and low intensity for 0   
 [how optical fibre transmit 0 and 1 ] (<https://networkengineering.stackexchange.com/questions/22676/is-fiber-optic-digital-or-analog-optical-signal-is-digital-or-analog>)
 - by two antennas (using electromagnetic waves) having transmitter and receiver like in satellites, mobile devices  
-TODO: how electromagnetic waves transfer data  
+TODO: how electromagnetic waves transfer data - it could be as simple as having two amplitude in wave one for 0 and one for 1  
 
 ## order of data movement in computer from physical layer to application level and vice versa
 
@@ -68,7 +69,7 @@ TODO: NDP should be able to used with ipv4 also I don't find any reason not to
 
 ## Routing protocol  
 
-these protocols are used to find the path for data travel from one locatiol to another location  
+these protocols are used to find the path for data travel from one location to another location  
 two networks are connected to some kind of bridgers like routers  
 
 e.g.  
@@ -90,6 +91,8 @@ two networks are connected via some kind of device called bridgers
 - repeater
 - bridge/switches
 - routers
+
+[Hub, Switch, & Router Explained](https://www.youtube.com/watch?v=1z0ULvg_pW8)  
 
 TODO: get other bridging device names
 
@@ -173,3 +176,6 @@ here we can have general idea of all topics and important linux data structures 
 this book gives detailed overview of tcp and ip working  
 3. Discrete Mathematics and Its Applications - Kenneth Rosen (2012)  
 this book can be used to understand graphs and spanning trees - so routers over network form a graph this will help in visualization and algorithms on graphs. mostly routing will be understandable easily then  
+
+**videos**  
+[packets, frames, switch and routers](https://www.youtube.com/watch?v=zhlMLRNY5-4)  
