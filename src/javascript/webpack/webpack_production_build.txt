@@ -1,4 +1,0 @@
-using uglifyjs plugin to minify the code
-
-import webpack from 'webpack'
-new webpack.optimize.UglifyJsPlugin()

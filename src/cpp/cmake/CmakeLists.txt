@@ -1,7 +1,0 @@
-cmake_minimum_required(version 3.18)
-
-# project name
-project(ashu)
-
-# ashu executable is created from ashu.cpp available in the dir where cmakelist is there
-add_executable(ashu ashu.cpp)

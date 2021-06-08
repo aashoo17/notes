@@ -1,1 +1,0 @@
-[string slices str, &str, String](https://www.reddit.com/r/rust/comments/7e9id4/fat_pointers_vs_string_slices_vs_slices/)
