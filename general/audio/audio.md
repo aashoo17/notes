@@ -1,0 +1,1 @@
+[working of microphones](https://www.youtube.com/watch?v=d_crXXbuEKE)

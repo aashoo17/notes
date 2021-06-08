@@ -1,0 +1,23 @@
+Authentication in React
+---------------------->
+
+firebase
+------->
+signup
+----->
+
+const key = 'AIzaSyBdfb9vRePNnw-eCF3dfq00EZ1KerXFi1Q'
+axios.post('https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key='+key,{
+      email: 'aashoo17@gmail.com',
+      password: 'ashu1ss1ck',
+      returnSecureToken: true
+    }).then(res => res.data)
+    
+signin
+----->
+const key = 'AIzaSyBdfb9vRePNnw-eCF3dfq00EZ1KerXFi1Q'
+axios.post('https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key='+key,{
+      email: 'aashoo17@gmail.com',
+      password: 'ashu1ss1ck',
+      returnSecureToken: true
+    }).then(res => res.data)
