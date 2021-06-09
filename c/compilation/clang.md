@@ -3,10 +3,13 @@
 ## compilation
 
 ## preprocessing
+clang -E main.c  
 
 ## compiling
+clang -c main.c -o main.o  
 
 ## assembling
+
 
 ## linking
 

@@ -1,7 +1,9 @@
 alias yt="youtube-dl"
 
+## download videos from youtube using youtube-dl
+
 **combination 1**  
-youtube-dl --merge-output-format webm -f 248+251 -a file.txt  
+youtube-dl --merge-output-format mkv -f 248+251 -a file.txt  
 **combination 2**  
 youtube-dl --merge-output-format mkv -f 137+140 -a file.txt  
 
@@ -18,3 +20,7 @@ TODO: write a command which uses 248+251 if any of the quality not available use
 
 **ffmpeg**  
 ensure that ffmpeg is installed otherwise merge will not happen  
+
+TODO: instead of typing all the details every time make it such that some settings are auto picked  
+like video/audio quality, merge format etc..
+

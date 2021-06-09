@@ -4,10 +4,7 @@ Processor, RAM, BUS, IO Bus
 
 ## How does processor and RAM carry out most of the tasks using BUS 
 
-Read Book - But how Do it Know?, The Basic Principles of Computers for Everyone – J. Clark Scott  
-Page 108 - The first great invention  
-
-![hardware in bsic form](assets/hardware.png)
+![hardware in basic form](assets/hardware.png)
 
 ## RAM 
 
@@ -35,7 +32,7 @@ ADD %rax %rbx  => opcode register register
 
 **control section**  
 it is not very useful from software perspective  
-sync all opeeration happening in hardware  
+sync all operation happening in hardware  
 like a byte kept on bus should be changing only some particular register this will be ensured by control section  
 
 **IR**   
@@ -48,7 +45,6 @@ IAR register keeps the address of next instruction to be executed
 bus is just group of wires which takes electricity from one place to another - taking electricity means taking bytes  
 all the things from ram, register, alu etc.. are connected to bus  
 so that they can give/take byte to/from another place  
-
 
 
 # hardware support for programming
@@ -74,7 +70,7 @@ processor gives opcode to do this
 loop - say start at instruction at line 10 go till instruction 15 and jump to 10 again and so on... you got a loop  
 
 ## conditional
-flag register - a special register which implicity gets set by ALU operations  
+flag register - a special register which implicitly gets set by ALU operations  
 processor will check this flag register before jumping to new location  
 and you got the conditional  
 
@@ -115,14 +111,14 @@ this can be done in 3 ways
 all kernel/os will decide their way of passing argument to which registers, return value to which register, and saving register convention  
 even different hardware can constraint these way of doing - x86 has few register so we have to keep most of args on stack and so on ..
 
-System V ABI is most commonaly used these days - linux, freebsd etc... use it  
+System V ABI is most commonly used these days - linux, freebsd and most unix variant etc... use it  
 
 ## Array
-store many of the items 1 after another in linear memory voilaa got arrays  
+store many of the items 1 after another in linear memory voila got arrays  
 
 ## struct
 same as array only we will keep different type in linear memory one after another  
-this poses a big hardware problem - memory alignemnt requirement  
+this poses a big hardware problem - memory alignment requirement  
 
 take x64  
 it can access 1, 2, 4, 8 bytes in one cycle  
@@ -151,6 +147,15 @@ if we keep the data at an address multiple of their size memory is called aligne
 
 ## enum
 simply array of integers all given different names  
+
+
+Reference:
+Book - But how Do it Know?, The Basic Principles of Computers for Everyone – J. Clark Scott   
+[Intel CPU Manual - IA32 and x86_64 ](https://software.intel.com/content/www/us/en/develop/articles/intel-sdm.html)  
+[AMD64 manual](https://developer.amd.com/resources/developer-guides-manuals/) - look for AMD64 Architecture Programmer’s Manual Volumes 1-5  
+
+youtube channel - [Luis Ceze channel](https://www.youtube.com/channel/UCmf3tLU4WzOnriEQXa638Bw)  
+
 
 
 
