@@ -1,0 +1,25 @@
+{
+  "name": "notes",
+  "version": "1.0.0",
+  "description": "1. Hardware explains how cpu/ram works from point of view of a software programmer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aashoo17/notes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aashoo17/notes/issues"
+  },
+  "homepage": "https://github.com/aashoo17/notes#readme",
+  "devDependencies": {
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
