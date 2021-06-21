@@ -1,7 +1,0 @@
-# memory management
-
-**stack**  
-
-
-**heap**  
-

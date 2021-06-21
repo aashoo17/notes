@@ -24,11 +24,11 @@ like +, -, *, /, %, <<, >> etc...
 so since operations are more than 1  
 assign a number corresponding to each operation so that ALU can know  
 which arithmetic operation is to be done - this no is called OPCODE  
-
 e.g.  
 for adding 10 + 10  
 one 10 in rax and one in rbx  
 ADD %rax %rbx  => opcode register register  
+
 
 **control section**  
 it is not very useful from software perspective  

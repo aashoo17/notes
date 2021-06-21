@@ -26,3 +26,17 @@ we can read in chunk of 4  - takes total 3 cycles
 
 **data alignment**  
 if we keep the data at an address multiple of their size memory is called aligned and less cpu cycles are required  
+
+## struct declaration
+all langugages let us create any struct whose available types are decided by us  
+this is done using declaring the struct
+
+## struct memory allocation
+only two types of memory exists - stack & heap   
+language gives ways to create struct on stack as well as heap  
+
+## struct memory initialization
+usually before we can do anything useful we have to initialize the struct memory
+
+## passing struct to functions
+structs are heavily passed to functions for their data modification to create a new state
