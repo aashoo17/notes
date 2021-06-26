@@ -1,6 +1,7 @@
 # Hardware
 
 Processor, RAM, BUS, IO Bus
+[explanation of processor, ram, bus working in sync](https://www.youtube.com/watch?v=zltgXvg6r3k)  
 
 ## How does processor and RAM carry out most of the tasks using BUS 
 
@@ -48,11 +49,15 @@ so that they can give/take byte to/from another place
 
 
 Reference:
-Book - But how Do it Know?, The Basic Principles of Computers for Everyone – J. Clark Scott   
-[Intel CPU Manual - IA32 and x86_64 ](https://software.intel.com/content/www/us/en/develop/articles/intel-sdm.html)  
-[AMD64 manual](https://developer.amd.com/resources/developer-guides-manuals/) - look for AMD64 Architecture Programmer’s Manual Volumes 1-5  
+Book
+[But how Do it Know?, The Basic Principles of Computers for Everyone – J. Clark Scott ](https://www.google.co.in/books/edition/But_how_Do_it_Know/-XGAPeVhRs4C?hl=en) 
 
-youtube channel - [Luis Ceze channel](https://www.youtube.com/channel/UCmf3tLU4WzOnriEQXa638Bw)  
+[Intel CPU Manual - IA32 and x86_64 ](https://software.intel.com/content/www/us/en/develop/articles/intel-sdm.html)  
+[AMD64 cpu manual](https://developer.amd.com/resources/developer-guides-manuals/) - look for AMD64 Architecture Programmer’s Manual Volumes 1-5  
+
+youtube channel - 
+[Luis Ceze channel](https://www.youtube.com/channel/UCmf3tLU4WzOnriEQXa638Bw)  
+[CrashCourse channel](https://www.youtube.com/channel/UCX6b17PVsYBQ0ip5gyeme-Q)  
 
 
 

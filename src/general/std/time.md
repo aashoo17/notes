@@ -2,7 +2,7 @@
 
 types of clocks in CPU
 
-1. time measuring clock (this is generally lower frequency set to 32768 Hz) - can run on battery power when computer is fully dead 
+1. time measuring clock (this is generally lower frequency set to 32768 Hz) - can run on battery power even when computer is fully dead 
 2. controlling CPU instruction execution speed(we see like 2.5 GHz, 2 GHz these days)  
 
 **epoch**  
@@ -21,7 +21,7 @@ quartz oscillator:
 quartz crystal when electromagnetic field is applied will vibrate on it natural frequency 
 frequency can be controlled by changing mass using some other material like gold coating to make it vibrate at some fixed 
 frequency which we want
-we need the frequency to be atleast above 20 kHz frequency so that it can not be heard by humans
+we need the frequency to be at least above 20 kHz frequency so that it can not be heard by humans
 we select first power of 2 which goes above 20k which is 2^15 = 32768
 TODO: why we select frequency which is in power of 2
 
