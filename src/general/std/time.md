@@ -3,7 +3,7 @@
 types of clocks in CPU
 
 1. time measuring clock (this is generally lower frequency set to 32768 Hz) - can run on battery power even when computer is fully dead 
-2. controlling CPU instruction execution speed(we see like 2.5 GHz, 2 GHz these days)  
+2. controlling CPU instruction execution speed(we see like 2.5 GHz, 2 GHz, 4 GHz these days)  
 
 **epoch**  
 all computers has an in-built clock which is set to give value in seconds (even with nanosecond precision) from 
@@ -36,6 +36,10 @@ TODO: give better definition
 ...
 15th one - every 2^15 = 32768 vibration 
 so 15th flip flop changes state (from 0 to 1) every 32768 vibration i.e. every 1 second, so it is counting 1 second
+
+so if crystal osciallted say at frequency N then 
+after N oscillations - 1 sec  
+in 1 oscillation - 1/N sec (least time which clock hardware can measure)
 
 ## Calendar time:
 conversion of these seconds in wall clock time - hrs:min:sec + day, month, year

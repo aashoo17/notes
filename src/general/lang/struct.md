@@ -5,13 +5,16 @@ this poses a big hardware problem - memory alignment requirement
 take x64  
 it can access 1, 2, 4, 8 bytes in one cycle  
 
-say we have memory locations as starting from 1 till 100  
+say we have memory locations as starting from 0 till 100  
 
 reading memory can be done like this  
-1 byte mode - 1, 2, 3, 4 .. so any location  
-2 byte mode - 2, 4, 6, 8, 10 ... so all multiple of 2  
-4 byte mode - 4, 8, 12, 16, 20 ... so all multiple of 4  
-8 byte mode - 8, 16, 24, 32 .... all multiple of 8  
+1 byte mode - 0, 1, 2, 3, 4 .. so any location  
+2 byte mode - 0, 2, 4, 6, 8, 10 ... so all multiple of 2  
+4 byte mode - 0, 4, 8, 12, 16, 20 ... so all multiple of 4  
+8 byte mode - 0, 8, 16, 24, 32 .... all multiple of 8  
+
+definitely hardware could have made to access memory from anywhere rather than in their multiples  
+but it was easy for hardware as less physical connections are required and burden of memory alignment was not that severe
 
 what we will do in these scenarios  
 8 bytes long data - use 8 byte reading 1 cycle used, but this can be done only if memory kept at address of multiple of 8  
@@ -28,7 +31,7 @@ we can read in chunk of 4  - takes total 3 cycles
 if we keep the data at an address multiple of their size memory is called aligned and less cpu cycles are required  
 
 ## struct declaration
-all langugages let us create any struct whose available types are decided by us  
+all languages let us create any struct whose available types are decided by us  
 this is done using declaring the struct
 
 ## struct memory allocation
@@ -40,3 +43,5 @@ usually before we can do anything useful we have to initialize the struct memory
 
 ## passing struct to functions
 structs are heavily passed to functions for their data modification to create a new state
+
+todo: add reference
