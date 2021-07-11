@@ -3,26 +3,30 @@ further compressed using gzip or bzip algorithms respectively.
 z option gzip
 j option bzip
 
-Extract a tar.gz archive
+## EXTRACT
+
+**Extract a tar.gz archive**  
 tar -xvzf tarfile.tar.gz
 x - Extract files
 v - verbose, print the file names as they are extracted one by one
 z - The file is a "gzipped" file
 f - Use the following tar archive for the operation
 
-Extract tar.bz2/bzip archives
+**Extract tar.bz2/bzip archives**  
 tar -xvjf archivefile.tar.bz2
 
-Extract in specific folder
+**Extract in specific folder**  
 tar -xvzf abc.tar.gz -C /opt/folder/
 
-Extract a single file
+**Extract a single file**  
 tar -xz -f abc.tar.gz "./new/abc.txt"
 
-Extract multiple files using wildcards
+**Extract multiple files using wildcards**  
 tar -xv -f abc.tar.gz --wildcards "*.txt"
 
-Create a tar/tar.gz archive
+## CREATE
+
+**Create a tar/tar.gz archive**  
 tar -cvf abc.tar ./new/
 ./new/
 ./new/cde.txt
