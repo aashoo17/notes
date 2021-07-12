@@ -35,4 +35,3 @@ gpg --edit-key blake@cyb.org
 fpr  
 sign  
 
-## Key Management

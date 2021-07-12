@@ -1,1 +1,0 @@
-### [Learn about signals](https://www.bogotobogo.com/Linux/linux_process_and_signals.php)

@@ -12,8 +12,6 @@ apt-get upgrade to update after getting the details of update
 
 some packages may need credentials so add the ssh key using apt-key
 
-
-
 curl -sS
 
 small s to make curl silent or mute during its operation

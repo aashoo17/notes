@@ -5,8 +5,6 @@ curl -v http://example.com
 
 To ask for both verbose mode and that curl follows HTTP redirects:
 curl -vL http://example.com
-curl http://example.com -Lv		//both are same
-
 
 When you use the short options with arguments, you can, in fact, also write the data without
 the space separator:
