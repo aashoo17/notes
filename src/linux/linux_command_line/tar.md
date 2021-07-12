@@ -10,7 +10,7 @@ tar -xvzf tarfile.tar.gz
 x - Extract files
 v - verbose, print the file names as they are extracted one by one
 z - The file is a "gzipped" file
-f - Use the following tar archive for the operation
+f - Use these files for tar archive 
 
 **Extract tar.bz2/bzip archives**  
 tar -xvjf archivefile.tar.bz2
@@ -33,7 +33,7 @@ tar -cvf abc.tar ./new/
 ./new/abc.txt
 tar -cvzf abc.tar.gz ./new/			//compress with gzip
 
-The extension of the file name does not really matter. "tar.gz" and tgz are common extensions
+The extension of the file name does not really matter. "tar.gz" and ".tgz" are common extensions
 for files compressed with gzip. ".tar.bz2" and ".tbz" are commonly used extensions for bzip
 compressed files.
 
