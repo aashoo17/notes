@@ -1,14 +1,20 @@
 # curl
 
-verbose mode with the -v option:
-curl -v http://example.com
+## GET operations
 
-To ask for both verbose mode and that curl follows HTTP redirects:
-curl -vL http://example.com
+curl 'https://jsonplaceholder.typicode.com/posts' --output file.txt  
 
-When you use the short options with arguments, you can, in fact, also write the data without
-the space separator:
-curl -darbitrary http://example.com
+by default curl emits output on stdout  
+use the redirection or output flag to change it to another location/file  
+
+curl 'https://jsonplaceholder.typicode.com/posts' --output file.txt  
+curl 'https://jsonplaceholder.typicode.com/posts' > file.txt  
+
+**silent operation**  
+curl -sS 'https://jsonplaceholder.typicode.com/posts' --output file.txt  
+
+-s = silent operation  
+-S = only errors are emitted when put on silent  
 
 ## POST operation
 
@@ -18,6 +24,7 @@ curl -d '{ "name": "Darth" }' http://example.com
 When specifying a numerical address,
 use the dotted version for IPv4 addresses:
 curl http://127.0.0.1/
+
 …and for IPv6 addresses the numerical version needs to be within square brackets:
 curl http://[::1]/
 

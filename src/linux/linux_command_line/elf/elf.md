@@ -21,8 +21,7 @@ look for the struct declaring section header
 symbols are dummy locations to be substituted later by linker => variables/functions
 
 ## relocation
-reloaction is the process in which symbols will be resolved and actual memory address will be kept by removing old dummy locations
-
+relocation is the process in which symbols will be resolved and actual memory address will be kept by removing old dummy locations
 
 ## dynamic linking
 

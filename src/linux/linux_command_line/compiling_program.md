@@ -1,3 +1,5 @@
+# compiling C/CPP programs using make
+
 most common and widely used compiler gnu gcc
 check if installed 
 which gcc

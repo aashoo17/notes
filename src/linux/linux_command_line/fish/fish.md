@@ -1,7 +1,9 @@
 # fish shell
 
 [fish shell tutorial](https://fishshell.com/docs/current/tutorial.html#tutorial)  
-run help in fish shell to get fish documentation  - nice   
+run help in fish shell to get fish documentation  - nice  
+
+help - type in fish shell  
 
 A shell is a program that helps you operate your computer by starting other programs. fish offers a command-line interface  
 **all the commands are written for ubuntu/debian**  
@@ -12,14 +14,21 @@ on debian based
 sudo apt install fish  
 
 **changing default shell**  
+see the current shell  
+echo $SHELL   
 
-chsh -s /usr/bin/fish
+see all the available shells on system  
+cat /etc/shells  
+
+change the shell  
+chsh -s /usr/bin/fish   
+log out the user and login again shell would be changed  
 
 **wild card**  
-* - select all  
-? - todo: fill it
+* - matches all  
+? - matches any one character  
 
-ls -la *.jpg
+ls -la *.jpg    //display all jpg files  
 
 **pipes and redirection**  
 
@@ -39,10 +48,15 @@ grep hello < file.txt
 
 [fish shell variable](https://fishshell.com/docs/current/language.html#shell-variables)  
 
+
+**environment variable**  
+a key value pair stored to modify the working of the programs  
+executables will check the environment variable to change their behavior  
+
 many applications are going to use the env variables to switch their way of working or location for finding something etc..  
 [linux/ubuntu environment variable location](https://askubuntu.com/questions/164586/environment-variables-where-are-they-stored-by-linux-how-do-i-change-them-and)  
 global env - /etc/environment  
-use env - ~/.profile and ~/.bashrc  
+user env - ~/.profile and ~/.bashrc  
 
 **accessing a variable**  
 a variable can be accessed by using $ before its name  
@@ -52,7 +66,7 @@ echo $SHELL
 
 they are usually written in caps but it is just convention  
 
-**scopes of variable**  
+**scopes of variable in fish**  
 
 Universal - that are shared between all the users' fish sessions on the computer.  
 Global - are specific to the current user fish session
@@ -62,14 +76,17 @@ There can be many variables with the same name, but different scopes. When you u
 
 
 **creating shell variable**  
-this is also called as exporting variable  
+this is also called as exporting variable   
 
 this creates local variable  
 set --export NAME CUSTOM_NAME   
 set -x NAME CUSTOM_NAME     //this is not equivalent to local - the variable will be local to the currently executing function only 
 set -gx NAME CUSTOM_NAME    //creating global variable 
 set -Ux NAME CUSTOM_NAME    //universal variable
-set -lx NAME CUSTOM_NAME    //local variable
+set -lx NAME CUSTOM_NAME    //local variable  
+
+-x or --export is same for exporting variable  
+todo: what does exporting the var means  
 
 **removing a variable**  
 also called as unexporting  
@@ -81,6 +98,14 @@ set -u NAME CUSTOM_NAME
 accessing list variables $PATH  
 echo $PATH[3]  
 index starts at 1 and not at 0  
+
+**changing list**  
+
+creating a list  
+set -x MYPATH 1 2 3
+
+append to list  
+set -x MYPATH "$MYPATH 4" 
 
 **PATH variable**  
 PATH variables act as normal lists, except they are are implicitly joined and split on colons.  
@@ -114,12 +139,6 @@ try -  echo $fish_user_paths
 now modifying fish_user_paths will automatically change the path for you  
 set -U fish_user_paths <some-path> $fish_user_paths  => <some_path> is your custom path
 
-## conditional
-todo: conditional
-
-## loop
-todo: loop
-
 **loop on lists**  
 ```bash
 for i in $PATH
@@ -145,7 +164,7 @@ end
 ```
 
 **Autoloading functions**  
-Functions can be defined on the commandline or in a configuration file  
+Functions can be defined on the command line or in a configuration file  
 
 autoloading function advantages  
 
@@ -169,9 +188,9 @@ we will be interested in following two locations
 
 todo: use golang for scripting in place of fish - fish will be used only for basic things complex script are for better in golang  
 
+## configure your fish shell
 
-
-
+[using fish_config- customize fish shell ](https://dev.to/nabbisen/fish-shell-configuration-594k)  
 
 
 

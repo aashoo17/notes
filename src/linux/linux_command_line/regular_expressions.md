@@ -2,7 +2,7 @@
 
 characters => 0 to 1 , a to z and A to Z in files etc
 
-\* matches any number of characters (0 to infinite length/occurences)
+* matches any number of characters (0 to infinite length/occurences)
 
 . matches any one character except newline
 

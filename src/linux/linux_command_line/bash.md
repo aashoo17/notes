@@ -100,6 +100,7 @@ VAR=value		//no spaces otherwise it will treat as command and try to execute it
 MY_MESSAGE="Hello World"
 echo $MY_MESSAGE
 read MY_NAME		//read a variable from a std input
+# exported variable are passed to any child process created using this shell   
 export MYVAR		//export variable to be used by other program
 . ./myvar2.sh		//We can source a script via the "." (dot) command: changes in any variable here will reflect in original file
 "${USER_NAME}_file"		//kind of concatenation with variable

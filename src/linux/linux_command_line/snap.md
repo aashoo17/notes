@@ -25,12 +25,6 @@ snap remove package_name
 list all installed packages
 snap list
 
-
-
-
-
-
-
 ## Questions
 
 How to install snap
@@ -45,7 +39,7 @@ find packages
 
 install packages
 
-chanells how to use and remove
+channels how to use and remove
 
 remove packages
 

@@ -53,6 +53,8 @@ deb https://repository.example.com/debian/ stable main
 but to use this manual gpg key we have to write in this format  
 deb [signed-by=/usr/share/keyrings/<myrepository>-archive-keyring.gpg] <https://repository.example.com/debian/ stable main>  
 
+signed-by tells where to find the key for authentication  
+
 adding architecture  
 deb [arch=amd64 signed-by=/usr/share/keyrings/<myrepository>-archive-keyring.gpg] <https://repository.example.com/debian/ stable main>  
 
