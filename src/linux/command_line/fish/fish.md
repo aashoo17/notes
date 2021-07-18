@@ -110,6 +110,8 @@ set -x MYPATH "$MYPATH 4"
 **PATH variable**  
 PATH variables act as normal lists, except they are are implicitly joined and split on colons.  
 
+-x => exporting a variable means this will be sent to process started by this shell  
+
 e.g.1
 ```bash
 set -x MYPATH 1 2 3     # this will set variable to list elements 1:2:3 => echo $MYPATH shows as 1 2 3 though
