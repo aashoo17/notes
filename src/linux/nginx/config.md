@@ -1,7 +1,21 @@
-# Configuration file
+# Configuration  
 
-look for => nginx.conf 
-in the directory => /usr/local/nginx/conf, /etc/nginx, or /usr/local/etc/nginx
+1. simple statements  
+user ashu;
 
-in arch I find the /etc/nginx directory to have default config  
+2. block stsatements  
+http{
+    server{
+        listen 80;
+    }
+}
+
+## main context configs
+
+
+## http context (server included)
+
+## events
+
+## 
 
