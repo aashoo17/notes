@@ -24,7 +24,6 @@ port nos
 well known ports  
 ephemeral ports  
 
-
 network byte order - MSB (big endian)  and conversion routines  
 
 DNS and its working  
@@ -33,7 +32,6 @@ Iterative and Concurrent Servers
 Iterative: The server handles one client at a time, processing that client’s
 request(s) completely, before proceeding to the next client.  
 Concurrent: The server is designed to handle multiple clients simultaneously.  
-
 
 linux epoll api  
 how it says when a fd is ready  

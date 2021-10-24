@@ -5,9 +5,7 @@ UIApplication
 [App Launch Sequence on iOS](https://oleb.net/blog/2012/02/app-launch-sequence-ios-revisited/)  
 
 [understanding delegates in ios app](https://code.tutsplus.com/tutorials/ios-from-scratch-with-swift-first-steps-with-uikit--cms-25461)  
-
-@UIApplicationMain use  
-UIApplication singleton class  
+ 
 Delegate pattern  
 UIApplicationDelegate, UIWindowSceneDelegate
 
@@ -44,7 +42,7 @@ by calling addSubView() method ?
 
 [The difference between a UIWindow and a UIView](https://stackoverflow.com/questions/8233976/the-difference-between-a-uiwindow-and-a-uiview)
 
-TODO: if UIViewController controls everything about the views why a speacial UIView subclass UIWindow is used. (as we know class UIWindow: UIView)
+TODO: if UIViewController controls everything about the views why a special UIView subclass UIWindow is used. (as we know class UIWindow: UIView)
 
 Layout
 ----->
