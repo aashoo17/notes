@@ -28,7 +28,7 @@ Execution environment
 ## Registers
 - General purpose
 - segment
-- eflags
+- flags
 - instruction
 
 # Data types
