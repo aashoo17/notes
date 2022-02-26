@@ -1,20 +1,23 @@
 # function
 
+a group of instruction run as many times you want without increasing the binary size  
+ 
+
 function is also a form of jump  
 think of it like this  
 I have kept some instruction at line 20 to 30  
 if processor executing at line 2 jumps to 20 and run instruction till 30 and come back to line 3 now  
 that's it - it is a function  
 
-only thing is that line 20 to 30 - have same instruction all the time not very useful  
+only thing is that line 20 to 30 - if it is having same instruction and giving same result all the time is not very useful  
 so argument and return ??
-argument - data can change in line 20 and 30  
-return - give some changing value back  
+argument - data on which instructions are working can change in line 20 and 30  
+return - give some changing value back   
 
 **argument passing**  
-we have two place two keep arguments  
-- register
-- stack  
+we have two defined places to keep arguments in memory  
+- register  
+- stack   
 
 since register are faster generally kept on register  
 but register are limited and they have fixed size say 8 bytes (in x64) - so stack is used in these cases  

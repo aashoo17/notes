@@ -44,4 +44,6 @@ usually before we can do anything useful we have to initialize the struct memory
 ## passing struct to functions
 structs are heavily passed to functions for their data modification to create a new state
 
-todo: add reference
+struct representation is intermediate form to actually convert it to machine instructions  
+
+TODO: add reference
