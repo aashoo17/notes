@@ -10,8 +10,8 @@ now how many GB 64 bits can address - 2^64 bytes addresses
 
 each byte in RAM is having a fixed address  
 pointer can store this address (for any byte)  
-adding 1 to pointer logically gives next byte address and similarly substracting will give previous byte address  
-no byte has address 0 in actual hardware so this was used as null/nil implementaion
+adding 1 to pointer logically gives next byte address and similarly subtracting will give previous byte address  
+no byte has address 0 in actual hardware so this was used as null/nil implementation
 
 
 ## Pointer working on type

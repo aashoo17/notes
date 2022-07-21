@@ -1,124 +1,32 @@
 # Data types
 
-## How people find ways to represent char, int, float/double 
-
-### int
-[Decimal and binary conversion of int](https://owlcation.com/stem/How-to-Convert-Decimal-to-Binary-and-Binary-to-Decimal)  
-int representation was very easy any no can be represented in binary form as described above.  
-more bytes mean bigger no can be represented say for  
-16 bits = 2^16 possible representation  
-32 bits = 2^32 possible integer reprentation  
-
-then came negative no so the easy way to do it would have been keep 1 bit for sign say  
-0000 0001 = 1
-1000 0001 = -1 (8th bit is 1 showing -ve no)
-
-but 0 is problem here we get two 0 as +0 and -0 then  
-0000 0000 = +0
-1000 0000 = -0
-[2's complement system](https://en.wikipedia.org/wiki/Two%27s_complement)  
-show came 2's complement, in this we reverse the bits and 1 to no to get the negative no of it  
-0000 0001 = 1  
-1111 1110 (bits reversed)
-1111 1111 = -1 (1 is added)  
-
-this way we will not get two zeros  
-0000 0000 = 0  
-get 2's complement  
-1111 1111 (reverse bits)  
-0000 0000 (add 1) = so we get same byte for 0's 2's complement  
-
-so in language there is no -2 representation of bytes  
-here - acts as unary operator and gets the 2's complement bits  
-2 = 0000 0010  
--2 = 1111 1110 (- operator gets the 2's complement)  
-
-### char
-[ascii table for char](http://www.asciitable.com/)  
-char was the easiest to do 1 byte can represent 255 possible combination  
-so with 1 byte we can represent 255 chars  
-just name some byte any char  
-for e.g. 
-
-if i have to do naively  
-0000 0001 (i.e. 1) can be A  
-0000 0010 (i.e. 2) can be B  
-
-so ascii has done that is most widely adopted see the ascii table  
-
-unsigned and signed char problem with char type  
-initially ascii had 127 characters only so some compiler has used unsigned char type and some used signed char type but for 127 chars representation both will have same bit pattern  
-
-say 1 in signed or unsigned type will be 0000 0001  
-but later ascii got extended to cover 255 chars  
-now the problem arose 
-
-say 128 unsigned type no problem but in signed char system 128 is not possible it will be some -ve no though all 8 bits will be same internally  
-1000 0000 = 128 (in unsigned type)  
-TODO: 1000 0000 = 0100 0000 (reverse of 2's complement) = -127  (possible value is -127 but not working out check it)   
-so internally bit did not change but meaning changed in signed/unsigned type  
-
-TODO: complete the task below  
-so if we write a program as  
-char a = 128;   (will this work portabily)  
-
-### float/double
-[IEEE-754 float visualization](http://bartaz.github.io/ieee754-visualization/)
-
-[How does a computer determine the data type of a byte?](https://cs.stackexchange.com/questions/45794/how-does-a-computer-determine-the-data-type-of-a-byte)  
-so write a program with 1 signed and 1 unsigned type vs both unsigned type and add them see their assemble which addition command is used. is it dfferent for signed types
-
-```c
-#include <stdio.h>
-
-int main(){
-    //so 1 is 0000 0001 in byte form (actually it will be 00000000 00000000 00000000 00000001 on modern processors and then truncated to 00000001)
-    //-1 will be 2's complement as 1111 1111 and unsigned type will mean 255 for this value
-    unsigned char a = -1;
-    printf("%u",a);
-}
-```
-
-TODO: what are the arithmetic operations for which type is signed/unsigned will matter, see the intel manual and find out  
-
-## How computer fetches memory and memory alignment
-[Data/memory alignment: why it is required](https://developer.ibm.com/technologies/systems/articles/pa-dalign/)  
-
-
-## processor working on bytes 
-this pretty much explains how processor fetches the memory  
-this memory is kept in registers say take a 64 bit register ( common in x86_64 processors)  
-byte kept in register is 00000000 00000000 00000000 00000000 00000000 00000000 00100000 10000000  
-now processor can operate on 1st byte only/2 bytes combined/ 4 bytes/  all 8 bytes  
-
-see intel manual volume 1 chapter 3.4.1 table 3.2 Addressable General Purpose Registers
-
 ## Number
-bsically we handle these bits type  
-- Integers
-    - bits
-        - 8 bits
-        - 16 bits
-        - 32 bits
-        - 64 bits
-    - unsigned nos
+basically we handle these bits type  
+- Integers  
+    - bits  
+        - 8 bits  
+        - 16 bits  
+        - 32 bits  
+        - 64 bits  
+    - unsigned nos with similar bit size  
 
-    - unsigned char is just int of 8 bits(char is compiler dependent so cant be relied upon may be unsigned char or signed char internally)
-    [byte data type in c/](https://stackoverflow.com/questions/20024690/is-there-byte-data-type-in-c)
-    - char
-    - short
-    - int
-    - long
-    - long long
-    - all unsigned counter part just starts with unsigned keyword
-    - unsigned short
-    - unsigned int
-    - unsigned long
-    - unsigned long long
+    - unsigned char is just int of 8 bits(char is compiler dependent so cant be relied upon may be unsigned char or signed char internally)  
+    [byte data type in c/](https://stackoverflow.com/questions/20024690/is-there-byte-data-type-in-c)  
+    - char  
+    - short  
+    - int  
+    - long  
+    - long long  
 
-usually processor will fetch 32/64 bits but they can work on 8/16/32/64 bytes. 
+    - all unsigned counter part just starts with unsigned keyword  
+    - unsigned short  
+    - unsigned int  
+    - unsigned long  
+    - unsigned long long  
+    
+usually 64 bit processor will fetch 32/64 bits but they can work on 8/16/32/64 bytes. 
 
-## How all int types like short,int,long,long long fit in general
+## C standard for integer sizes
 standard has only defined minimum size for them   
 short and int = min 16 bit  
 long = min 32 bit  
@@ -147,7 +55,7 @@ char c = 255;
 
 ```c
 //EOF is marked as end of file and EOF = -1
-//but say we have unsigned char type we can never rpresent -1 (only 0 to 255 is possible)
+//but say we have unsigned char type we can never represent -1 (only 0 to 255 is possible)
 //so this is tackled by returning int 
 //getchar() returns int
 
@@ -160,11 +68,11 @@ while((c = getchar()) != EOF){
 ```
 
 so if you are taking min size as consideration program will be portable to any platform  
-[A good read on platform depedency on integer types](https://softwareengineering.stackexchange.com/questions/400379/why-arent-the-platform-specific-integer-types-in-c-and-c-short-int-long-d)  
+[A good read on platform dependency on integer types](https://softwareengineering.stackexchange.com/questions/400379/why-arent-the-platform-specific-integer-types-in-c-and-c-short-int-long-d)  
 [using fixed with size of integers](https://stackoverflow.com/questions/13413521/is-there-any-reason-not-to-use-fixed-width-integer-types-e-g-uint8-t)  
 [What is the size of an integer in a 64-bit computer?](https://www.quora.com/What-is-the-size-of-an-integer-in-a-64-bit-computer)  
 
-since there were platform dependency for all integer types c came out with header stdint.h which will typedef underlying type to gurantee some assumptions  
+since there were platform dependency for all integer types c came out with header stdint.h which will typedef underlying type to guarantee some assumptions  
 
 ## stdint.h and inttypes.h  
 1. The header file on a system that uses a 32-bit int could define int32_t as an alias for int. A different system, one with a 16-bit int and a 32-bit long, could define the same name, int32_t, as an alias for int. Then, when you write a program using int32_t as a type and include the stdint.h header file, the compiler will substitute int or long for the type in a manner appropriate for your particular system.
@@ -175,7 +83,7 @@ The alternative names we just discussed are examples of exact-width integer type
 4. or some programmers, only the biggest possible integer type on a system will do; intmax_t stands for that type, a type that can hold any valid signed integer value. Similarly, uintmax_t stands for the largest available unsigned type.  
 
 printf() requires specific specifiers for particular types. So what do you do to display an int32_t value when it might require a %d specifier for one definition and an %ld for another? The current standard provides some string macros  to be used to display the portable types. For example,
-the inttypes.h header file will define PRId32 as a string representing the appropriate speci-fier (d or l, for instance) for a 32-bit signed value. The inttypes.h header file includes stdint.h, so the program only needs to include inttypes.h.  
+the inttypes.h header file will define PRId32 as a string representing the appropriate specifier (d or l, for instance) for a 32-bit signed value. The inttypes.h header file includes stdint.h, so the program only needs to include inttypes.h.  
 
 printf("x = %" PRId32 "\n", x);  
 printf("x = %" "d" "\n", x);  
@@ -192,19 +100,16 @@ The behavior described here is mandated by the rules of C for unsigned types. Th
 
 # FLOAT/DOUBLE
 
-[IEEE-754 representaion visually](http://bartaz.github.io/ieee754-visualization/)
+[IEEE-754 representation visually](http://bartaz.github.io/ieee754-visualization/)
 we can visualize the floating point from here, even 0 and 1 can be changed with mouse for new value visualization
 
 - Real Nos
     - float
-        - 64 bits
+        - 32 bits
     - double
-        - 128 bits
+        - 64 bits
 
 How floats and double are stored in memory  
-IEEE system for floats representation  
-[IEEE-754 float visualization](http://bartaz.github.io/ieee754-visualization/)
-
 
 ## Floating-Point Overflow and Underflow  
 This is an example of overflow—when a calculation leads to a number too
@@ -219,50 +124,42 @@ asin() function a value, and it returns the angle that has that value as its sin
 ## printing formatted output using printf  
 format specifiers in C
 --------------------->
-%c	Character	char unsigned char
-%d	Signed Integer	short unsigned short int long
-%e or %E	Scientific notation of float values	float double
-%f	Floating point	float
-%.2f float with 2 digit after decimal
-%g or %G	Similar as %e or %E	float double
-%hi	Signed Integer(Short)	short
-%hu	Unsigned Integer(Short)	unsigned short
-%i	Signed Integer	short unsigned short int long
-%l or %ld or %li	Signed Integer	long
-%lf	Floating point	double
-%Lf	Floating point	long double
-%lu	Unsigned integer	unsigned int unsigned long
-%lli, %lld	Signed Integer	long long
-%llu	Unsigned Integer	unsigned long long
-%o	Octal representation of Integer.	short unsigned short int unsigned int long
-%p	Address of pointer to void void *	void *
-%s	String	char *
-%u	Unsigned Integer	unsigned int unsigned long
-	it can also be used for printing address as they are non negative nos
-%x or %X	Hexadecimal representation of Unsigned Integer	short unsigned short int unsigned int long
-%n	Prints nothing	
-%%	Prints % character  
+%c	Character	char unsigned char  
+%d	Signed Integer	short unsigned short int long  
+%e or %E	Scientific notation of float values	float double  
+%f	Floating point	float  
+%.2f float with 2 digit after decimal  
+%g or %G	Similar as %e or %E	float double  
+%hi	Signed Integer(Short)	short  
+%hu	Unsigned Integer(Short)	unsigned short  
+%i	Signed Integer	short unsigned short int long  
+%l or %ld or %li	Signed Integer	long  
+%lf	Floating point	double  
+%Lf	Floating point	long double  
+%lu	Unsigned integer	unsigned int unsigned long  
+%lli, %lld	Signed Integer	long long  
+%llu	Unsigned Integer	unsigned long long  
+%o	Octal representation of Integer.	short unsigned short int unsigned int long  
+%p	Address of pointer to void void *	void *  
+%s	String	char *  
+%u	Unsigned Integer	unsigned int unsigned long  
+	it can also be used for printing address as they are non negative nos  
+%x or %X	Hexadecimal representation of Unsigned Integer	short unsigned short int unsigned int long  
+%n	Prints nothing	 
+%%	Prints % character   
 
-explain this %+10.2f = total 10 digits + 2 decimals and left justified  
+%+10.2f prints 10 digits total and 2 digits after decimal with right justified  
 
 ```c
 #include <stdio.h>
-
 int main(){
 	float a = 1234.342;
 	printf("*%+10.2d*\n",a);
 }
-
 ```
 
 ## const data type 
 a variable/data marked as const can't be modified while program is running
-
-## declaration and assignment  
-declaration will allocate enough memory generally on stack   
-int i; //declaration  
-assignment will put the value in that memory  
-i = 10; //assignment
 
 ## octal and hexadecimal   
 octal = starts with 0 like 028  
@@ -290,7 +187,7 @@ u8,u16,u32,u64,u128 => unsigned ones
 ## what is a variable at hardware level
 
 for simplicity if we think some address from RAM is stored in one of the registers say RSP   
-then we can locate any other addess just by adding a no to it  
+then we can locate any other address just by adding a no to it  
 RSP+1, RSP+10, RSP+200 etc..
 
 so a variable at low level is pretty much something/data holded at an address  
@@ -308,11 +205,11 @@ we can have struct, union, enum at high level to point to data at some memory lo
 ![stack and stack frames](assets/stack_&_stack_frames.png)  
 
 think of these 2 scenarios in c  
-
+TODO: this is not valid for x64 to be modified - only RSP alone does the job
 a function call = hello()  defined as void hello(){}  
 so all local variables of functions and some args (as defined by abi of OS/hardware) are stored on stack memory   
 just as stack is created RBP and RSP registers point to starting of stack  
-once simething is pushed on stack RSP is moved to point to next memory location  
+once something is pushed on stack RSP is moved to point to next memory location  
 when function returns we move RSP back to RBP location  
 
 and another fn call = greet() defined as void greet(){hello();}  
@@ -335,13 +232,13 @@ hello:
 
 
 ## data type conversion say an int to short etc. 
+TODO: is this correct ?
 so these type of conversions are really supported by hardware so they are not specific to any language but depends on underlying processor  
-
-
 
 References:-
 [c data types from wikipedia](https://en.wikipedia.org/wiki/C_data_types)  
 [What is difference between global and static variables in C ?](http://codingstreet.com/c-basic-questions/what-is-difference-between-global-and-static-variables-in-c/)    
-TODO: put intel manual and amd64 manual link  
+TODO: put intel manual and amd64 manual link 
+
 Book:-  
 C Primer plus 6th edition
