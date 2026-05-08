@@ -1,40 +1,29 @@
 {
   "name": "notes",
   "version": "1.0.0",
-  "description": "1. Hardware explains how cpu/ram works from point of view of a software programmer",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/aashoo17/notes.git"
+    "dev": "vite"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/aashoo17/notes/issues"
-  },
-  "homepage": "https://github.com/aashoo17/notes#readme",
-  "devDependencies": {
-    "@babel/core": "^7.14.5",
-    "@babel/preset-env": "^7.14.5",
-    "babel-loader": "^8.2.2",
-    "css-loader": "^5.2.6",
-    "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^5.3.1",
-    "mini-css-extract-plugin": "^1.6.0",
-    "sass-loader": "^12.1.0",
-    "url-loader": "^4.1.1",
-    "webpack": "^5.38.1",
-    "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^4.3.1"
-  },
+  "type": "commonjs",
   "dependencies": {
-    "codemirror": "^5.61.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "scrolltofixed": "^1.0.6"
+    "@tailwindcss/vite": "^4.2.4",
+    "jquery": "^4.0.0",
+    "js-search": "^2.0.1",
+    "lunr": "^2.3.9",
+    "material-icons": "^1.13.14",
+    "materialize-css": "^1.0.0-rc.2",
+    "tailwindcss": "^4.2.4"
+  },
+  "devDependencies": {
+    "@vituum/vite-plugin-pug": "^2.0.1",
+    "pug": "^3.0.4",
+    "vite": "^8.0.10",
+    "vite-plugin-full-reload": "^1.2.0",
+    "vituum": "^2.0.2"
   }
 }
