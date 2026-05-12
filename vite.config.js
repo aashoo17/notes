@@ -13,7 +13,7 @@ export default defineConfig({
     }),
     pug(),
     // Force a browser refresh whenever ANY pug file in the root or src changes
-    FullReload(["index.pug", "*/*.pug"], { delay: 100 }),
+    FullReload(["index.pug", "*.pug","*/*.pug", "src/*.pug", "src/*/*.pug", "src/*/*/*.pug","helper/*.pug"], { delay: 100 }),
   ],
   server: {
     port: 3000,

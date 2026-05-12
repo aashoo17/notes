@@ -1,0 +1,42 @@
+div.container
+    div.row
+        div.col.s12.m8.offset-m1.xl7.offset-xl1
+            h1 Closure
+            a(href="https://internals.rust-lang.org/t/still-confused-by-move-vs-closures/1430") understanding rust closure
+            pre
+                code.
+                    let x = || {println!("Hello")};  
+
+            p this statement creates instance of struct having data and method  
+
+            //Ashu and call are my given names rust will create names in its own way 
+
+            pre
+                code.
+                    struct Ashu{ 
+                        //variables
+                    }
+                    impl Ashu{
+                        //call can take &self or &mut self
+                        fn call(&self){
+                            println!("Hello")
+                        }
+                    }
+
+            p now this struct will be initialized in memory and the method can access struct mutably or immutably
+
+            h2 capturing environment  
+            p normally functions can access values created inside it or passed as argument but closures can access the value in the same scope  
+
+            pre
+                code.
+                    fn main(){
+                        let y = 1;
+                        //y will be accessed in the closure even after it is not available in the x declaration of closure  
+                        //y can be passed as &y or &mut y (if y is mutable itself)
+                        //giving ownership to closure
+                        //move will pass ownership of y to closure and closure can consume y
+                        let x = || {println!("{}",y)}; 
+                    }
+
+
